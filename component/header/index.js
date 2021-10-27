@@ -1,11 +1,16 @@
-import styles from "./header.module.scss"
+import styles from "./Header.module.scss";
 
-const  Header = () => {
+const Header = () => {
     return (
-        <div className={styles.container}>
-            12312345
-        </div>
+        <header className={styles.header}>
+            <div className={styles.hamburgerButton}>
+                <div />
+                <div />
+                <div />
+            </div>
+            <h1>Online Note</h1>
+        </header>
     );
-}
+};
 
-export default Header
+export default Header;

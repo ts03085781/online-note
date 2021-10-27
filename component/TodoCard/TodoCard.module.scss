@@ -1,0 +1,45 @@
+$background-color: #383838;
+
+.todoCard {
+    position: relative;
+    max-width: 500px;
+    margin: 20px 0 0 0;
+    border-radius: 5px;
+    background-color: $background-color;
+    padding: 20px;
+    .delete {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+        transition: all 0.1s;
+        font-size: 16px;
+        &:hover {
+            transform: scale(1.5);
+            color: #ca4747;
+        }
+    }
+    .edit {
+        position: absolute;
+        right: 45px;
+        top: 10px;
+        cursor: pointer;
+        transition: all 0.1s;
+        font-size: 16px;
+        &:hover {
+            transform: scale(1.5);
+            color: #3fa03d;
+        }
+    }
+    > p {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 0 8px 0;
+    }
+    .text {
+        width: 100%;
+        background-color: $background-color;
+        border: none;
+        line-height: 25px;
+    }
+}

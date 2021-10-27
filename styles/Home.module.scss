@@ -1,5 +1,10 @@
-.main{
+.home {
     max-width: 980px;
-    width: 100%;
-    border: snow 1px solid;
+    min-width: 360px;
+    position: relative;
+}
+
+.main {
+    padding: 20px 10px;
+    min-height: calc(100vh - 196px);
 }

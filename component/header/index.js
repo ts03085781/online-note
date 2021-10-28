@@ -1,9 +1,13 @@
 import styles from "./Header.module.scss";
 
-const Header = () => {
+const Header = (props) => {
+    const { clickHamburgerButton } = props;
     return (
         <header className={styles.header}>
-            <div className={styles.hamburgerButton}>
+            <div
+                className={styles.hamburgerButton}
+                onClick={clickHamburgerButton}
+            >
                 <div />
                 <div />
                 <div />

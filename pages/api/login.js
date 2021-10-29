@@ -19,5 +19,13 @@ const demoDate = {
 };
 
 export default function handler(req, res) {
-    res.status(200).json(demoDate.list);
+    const postData = req.body;
+    const login = postData.id === 'ts03085781' && postData.password === 'ts03085782';
+    console.log('loginloginlogin', login);
+    const resData = {
+        id: demoDate.id,
+        login: login,
+    };
+
+    res.status(200).json(resData);
 }

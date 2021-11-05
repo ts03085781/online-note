@@ -1,23 +1,13 @@
-const demoDate = {
-    id: 'ts03085781',
-    password: 'ts03085782 ',
-    answer: '汐止國小',
-    list: [
-        {
-            title: 'title from api 1',
-            content: 'this is content from api 1',
-            favorite: true,
-            time: '2021-10-28',
-        },
-        {
-            title: 'title from api 2',
-            content: 'this is content from api 2',
-            favorite: true,
-            time: '2021-10-28',
-        },
-    ],
-};
+import dbConnect from "../../../utils/dbConnect";
+import usersList from "../../../models/usersList";
 
-export default function handler(req, res) {
-    res.status(200).json(demoDate.list);
+dbConnect();
+
+export default async function handler(req, res) {
+    const postData = req.body;
+    const id = postData.id;
+    const usersLists = await usersList.find({ id: id });
+    const targetList = usersLists[0].list;
+    console.log("AAAAAAAAAAAA", targetList);
+    res.status(200).json(targetList);
 }

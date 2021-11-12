@@ -47,20 +47,19 @@ const Home = (props) => {
         const res = await fetch(apiUrl, apiTemplate);
         const data = await res.json();
         console.log(data);
+        setListData(data);
         return data;
     };
 
-    useEffect(async () => {
-        //鑒察是否為登入狀態
+    useEffect(() => {
+        //檢查是否為登入狀態
         const login = !!JSON.parse(localStorage.getItem("onlineNote"))?.login;
         setLogIn(login);
 
         if (login) {
-            const userListData = await fetchUserListData();
-            console.log(userListData);
-            setListData(userListData);
+            fetchUserListData();
         }
-    });
+    }, []);
 
     return logIn ? (
         <div className={styles.home}>
